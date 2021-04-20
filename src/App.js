@@ -29,12 +29,11 @@ class App extends Component {
   timeout = 5; 
   go = true;
 
-  // TODO 2: create an update method that will:
+   // TODO 5: create an update method that will:
   //  1) safely update the color in the state
   //  2) randomly pick a source color
   //  3) randomly pick a target color
-  //  4) replace the target with the source
-  
+  //  4) replace the target with the source  
   cleverUpdate = () => {
 
     
@@ -43,8 +42,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allColors: [], // TODO 1: set this property to the value in 'props'.  
-                    // Do not use a shallow copy.
+      // TODO 4: set allColors to the value in 'props'.
+      // Do not use a shallow copy.
+      allColors: [], 
       colorCount: this.setColorCount(this.props.allColors.slice()),
       initial: true,
     };
@@ -60,7 +60,7 @@ class App extends Component {
     return [{color: "black", count: 40}];
   }
 
-  // TODO 
+  // TODO 6 Color counts
   // Parameter 1:  color to count 
   // Parameter 2:  array of all colors
   // returns count of the color
@@ -72,7 +72,7 @@ class App extends Component {
   render() {
     let set = [];
     let counts = [];
-    // TODO 1: Set the loop counter to all possible colors
+    // TODO 2: Fix the loop to show all possible colors
     for (let i = 0; i < 1; i++) {
       set.push(
         <Square
@@ -95,7 +95,7 @@ class App extends Component {
         </p>
       );
     }
-    // TODO 1: add || true to the test
+    // TODO 0: add || true to the test (Temp code remove)
     if (this.state.colorCount.length > 1) {
       setTimeout(this.cleverUpdate, this.state.initial ? this.timeout * 1000 : this.timeout);
     } else {
